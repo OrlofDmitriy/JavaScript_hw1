@@ -8,8 +8,23 @@
 </head>
 <body>
     <script>
-        document.write('Hello, world!');
-        console.log('Hello, developers!');
+        while (true) {
+            let hiddenNumber = Math.floor(Math.random() * 1000)
+            console.log(hiddenNumber)
+            let userNumber = prompt('Введите число от 0 до 999 (чтобы выйти наберите "выход"): ')
+
+            if (userNumber === 'выход') {
+                break
+            } else if (isNaN(userNumber) || !(userNumber >= 0 && userNumber <= 999)) {
+                alert('Введено не число от 0 до 999!')
+            } else if (hiddenNumber === +userNumber) {
+                alert('Угадал!')
+            } else if (hiddenNumber > +userNumber) {
+                alert('Больше!')
+            } else {
+                alert('Меньше!')
+            }
+        }
     </script>
 </body>
 </html>
